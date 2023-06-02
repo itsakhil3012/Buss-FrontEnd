@@ -193,3 +193,16 @@
     margin-top: 5px;
     margin-right: 3px;
 }
+::ng-deep.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #FCF55F !important;
+}
+
+::ng-deep .mat-raised-button {
+    background-color: #FCF55F !important;
+    color: black !important;
+    margin-right: 2rem !important;
+    margin: 2rem !important;
+}

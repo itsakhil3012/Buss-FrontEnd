@@ -22,6 +22,9 @@
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.8rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 9px;
 
 }
 
@@ -173,4 +176,18 @@ form .input-box {
 .mat-menu-item-highlighted:not([disabled]) {
     background: #B6D0E2;
 
+}
+
+::ng-deep.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #FCF55F !important;
+}
+
+::ng-deep .mat-raised-button {
+    background-color: #FCF55F !important;
+    color: black !important;
+    margin-right: 2rem !important;
+     margin: 2rem !important;
 }

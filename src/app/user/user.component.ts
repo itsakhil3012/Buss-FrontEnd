@@ -116,6 +116,7 @@ export class UserComponent implements OnInit {
         next(value: any) {
       
           $this.bus_route = value?.buses;
+          console.log('value',value?.value)
         },
       })
   }
@@ -171,7 +172,7 @@ export class UserComponent implements OnInit {
         },
         error(err) {
           console.log("error", err)
-          $this.toaster.error(err.error.msg)
+          $this.toaster.error(err.error.ms)
         },
       })
 

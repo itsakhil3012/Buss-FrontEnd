@@ -111,7 +111,7 @@ export class BusOwnerComponent implements OnInit {
 
     this.bus_type = data?.bus_type;
     this.bus_form?.patchValue({
-      bus_type: data?._id
+      bus_type: data?.bus_type
     })
   }
   onSubmit(data: any) {

@@ -63,7 +63,7 @@ export class UserComplaintsComponent implements OnInit {
         },
         error(err) {
           console.log("error", err)
-          $this.toaster.error(err.error.message)
+          $this.toaster.error(err.error.msg)
         },
       })
 

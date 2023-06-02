@@ -103,7 +103,7 @@ export class BusOwnerComponent implements OnInit {
     console.log("data",data)
     this.location = data?.location;
     this.bus_form?.patchValue({
-      location: data?._id
+      location: data?.location
     })
 
   }
@@ -129,7 +129,7 @@ export class BusOwnerComponent implements OnInit {
         },
         error(err) {
           console.log("error", err)
-          $this.toaster.error(err.error.message)
+          $this.toaster.error(err.error.msg)
         },
       })
 

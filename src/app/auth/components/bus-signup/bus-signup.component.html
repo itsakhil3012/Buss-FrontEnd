@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="login-section">
+        <div class="login-header">
+            <h4>Don't waste your energy on those who don't get on your bus</h4>
+            <span>- Jon Gordon</span>
+        </div>
+        <div class="login-content">
+            <div class="login-container">
+                <div class="form-container">
+                    <h4>Bus Owner Sign in</h4>
+                    <form class="form" [formGroup]="bus_login">
+                        <div class="input-box">
+                            <span class="label">
+                                Username
+                            </span>
+                            <input type="text" class="input-field" placeholder="Enter Bus owner Username" name="email"
+                                [ngClass]="{'form-input-field-error':form_control('email')}" formControlName="email">
+                        </div>
+                        <div class="input-box">
+                            <span class="label">
+                                Password
+                            </span>
+                            <input type="password" class="input-field" placeholder="Enter password" name="password"
+                                [ngClass]="{'form-input-field-error':form_control('password')}" formControlName="password">
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn-medium"
+                                (click)="bus_login.valid?onSubmit(bus_login.value):toaster.error('Enter required fields');">Sign
+                                in
+                            </button>
+                        </div>
+                    </form>
+
+                    <div>
+                        <button class="btn-signup" [routerLink]="['../bus-regiter']">Sign up <span><img
+                                    src="../../../../assets/Images/icons8-finger-up-50.png"></span></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

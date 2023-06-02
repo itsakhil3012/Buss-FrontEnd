@@ -1,0 +1,45 @@
+<div>
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="login-section">
+        <div class="login-header">
+            <h4>Know how to travel from your town to a nearby town without a car, either by bus or by rail.</h4>
+            <span>- Marilyn vos Savant</span>
+        </div>
+        <div class="login-content">
+            <div class="login-container">
+                <div class="form-container">
+                    <h4>User register</h4>
+                    <form class="form" [formGroup]="user_register">
+                        <div class="input-box">
+                            <span class="label">
+                                Username
+                            </span>
+                            <input type="text" class="input-field" placeholder="Enter username" name="name"
+                                [ngClass]="{'form-input-text-error':form_control('name')}" formControlName="name">
+                        </div>
+                        <div class="input-box">
+                            <span class="label">
+                                Email
+                            </span>
+                            <input type="text" class="input-field" placeholder="Enter email" name="email"  [ngClass]="{'form-input-text-error':form_control('email')}"
+                                formControlName="email">
+                        </div>
+                        <div class="input-box">
+                            <span class="label">
+                                Password
+                            </span>
+                            <input type="password" class="input-field" placeholder="Enter password" name="name"  [ngClass]="{'form-input-text-error':form_control('password')}"
+                                formControlName="password">
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn-medium" (click)="user_register.valid?onSubmit(user_register.value):toaster.error('Enter required fields');">Sign up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

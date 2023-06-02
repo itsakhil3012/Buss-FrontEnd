@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div>
+    <div class="user-content">
+        <div class="prblm-section">
+            <h4>Enter Your Complaint </h4>
+            <form [formGroup]="complaint_form">
+                <div class="input-box ">
+                    <span class="label">
+                        Select Bus name
+                    </span>
+                    <div class="menu">
+                        <button mat-button [matMenuTriggerFor]="menubus">
+                            <div class="menu-btn flex justify-between items-center">
+                                <mat-label>{{this.bus_complaint_name||'Bus name'}}</mat-label>
+                            </div>
+                        </button>
+                        <mat-menu yPosition="below" class="myMenu" #menubus="matMenu">
+                            <button mat-menu-item *ngFor="let list of bus_comp_name"
+                                (click)="busList(list)">{{list?.name}}</button>
+                        </mat-menu>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="label">
+                        Comment
+                    </span>
+                    <textarea class="input-text" name="comment" formControlName="comment"
+                        placeholder="Enter Your comment"></textarea>
+                </div>
+                <div class="input-box">
+                    <span class="label">
+                        Complaint
+                    </span>
+                    <input type="text" class="input-field" placeholder="Enter bus name" name="problem"
+                        formControlName="problem">
+                </div>
+                <div>
+                    <button class="btn-signup"
+                        (click)="complaint_form.valid?onSubmit(complaint_form.value):toaster.error('Enter required fields');">Register</button>
+                </div>
+
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

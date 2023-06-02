@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="admin-page-section">
+    <div class="login-container">
+        <div class="form-container">
+            <h4>Add bus type</h4>
+            <form class="form" [formGroup]="add_bustype">
+                <div class="input-box">
+                    <span class="label">
+                     Bus type
+                    </span>
+                    <input type="text" class="input-field" placeholder="Enter location" name="bus_type"
+                        [ngClass]="{'form-input-field-error':form_control('bus_type')}" formControlName="bus_type">
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn-medium"
+                        (click)="add_bustype.valid?onSubmit(add_bustype.value):toaster.error('Enter required fields');">
+                        Add bus type
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

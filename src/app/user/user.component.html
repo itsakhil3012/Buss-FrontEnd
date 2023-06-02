@@ -1,0 +1,100 @@
+<div>
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="user-content">
+        <div class="user-select-bus">
+            <button [routerLink]="['user-complaint']" mat-raised-button>Add Complaints</button>
+            <div class="user-box">
+                <form class="user-form">
+                    <div class="menu">
+                        <button mat-button [matMenuTriggerFor]="menuto">
+                            <div class="menu-btn-current">
+                       
+                                <mat-label>{{this.location||"Current"}}</mat-label>
+                            </div>
+                        </button>
+                        <mat-menu #menuto="matMenu">
+                            <button mat-menu-item *ngFor="let item of current_location"
+                                (click)="locationSubmit(item?.location)">{{item?.location}}</button>
+                        </mat-menu>
+                    </div>
+                    <div class="menu">
+                        <button mat-button [matMenuTriggerFor]="menu">
+                            <div class="menu-btn-from">
+                           
+                                <mat-label>{{this.destination_from||"From"}}</mat-label>
+                            </div>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item *ngFor="let frm of destination_location"
+                                (click)="destinationSubmitFrom(frm?.route_from)">{{frm?.route_from}}</button>
+                        </mat-menu>
+                    </div>
+                    <div class="route">
+                        <img src="../../assets/Images/icons8-bus-stop-67.png">
+                    </div>
+                    <div class="menu">
+                        <button mat-button [matMenuTriggerFor]="menufrom">
+                            <div class="menu-btn-to">
+                                <mat-label>{{this. destination_to||"To"}}</mat-label>
+                            </div>
+                        </button>
+                        <mat-menu #menufrom="matMenu">
+                            <button mat-menu-item *ngFor="let to of destination_location"
+                                (click)="destinationSubmitTo(to?.route_to)">{{to?.route_to}}</button>
+                        </mat-menu>
+                    </div>
+                    <!-- <div class="menu">
+                        <button mat-button [matMenuTriggerFor]="menutype">
+                            <div class="menu-btn-to">
+                                <mat-label>{{this.bus_type_name||"Bus type"}}</mat-label>
+                            </div>
+                        </button>
+                        <mat-menu #menutype="matMenu">
+                            <button mat-menu-item *ngFor="let type of bus_type"
+                                (click)="busTypeSubmit(type)">{{type?.bus_type}}</button>
+                        </mat-menu>
+                    </div> -->
+                    <div class="menu">
+                        <button (click)="searchbus()">
+                            <div class="menu-btn-search">
+                                <mat-label>Search bus</mat-label>
+                                <img src="../../assets/Images/icons8-search-26.png">
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="route-details" *ngIf="bus_route">
+                <div class="route-bus" *ngFor="let item of bus_route">
+                    <div class="details">
+                        <h4>Bus Name</h4>
+                        <p>{{item?.name}}</p>
+                    </div>
+                    <div class="details">
+                        <h4>Air Condition</h4>
+                        <p *ngIf="item?.air_condition==true">Yes</p>
+                        <p *ngIf="item?.air_condition==false">No</p>
+                    </div>
+                    <div class="details">
+                        <h4>Starting time</h4>
+                        <p>{{item?.starting_time}}</p>
+                    </div>
+                    <div class="details">
+                        <h4>Ending time</h4>
+                        <p>{{item?.ending_time}}</p>
+                    </div>
+                    <div class="details">
+                        <h4>Bus type</h4>
+                        <p>{{item?.bus_type}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

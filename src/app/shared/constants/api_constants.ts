@@ -1,0 +1,30 @@
+export const ApiConstant = Object.freeze({
+    user_login: 'user/login',
+    user_profile: 'user/profile-detail',
+    user_register: 'user/register',
+    bus_profile: 'bus-owner/profile-detail',
+    bus_login: 'bus-owner/login',
+    bus_register: 'bus-owner/register',
+    bus_list: 'user/list-location',
+    bus_type_list:'user//list-bus-types',
+    bus_current_location: 'user/list-location',
+    bus_destination: 'user/list-destination',
+    bus_route: 'user/list-bus',
+    bus_name: 'user/list-bus',
+    user_complaint_post:'user/create-complaint',
+    bus_owner_location:'bus-owner/list-location',
+    bus_owner_bus_list:'bus-owner/list-bus-type',
+    bus_owner_complaint:'bus-owner/bus-complaints',
+    bus_registration:'bus-owner/bus-registration',
+    admin_login:'admin/login',
+    admin_profile:'admin/profile-detail',
+    admin_bus_list:'admin/list-buses',
+    admin_complaints_list:'admin/list-complaints',
+    admin_approve_bus:'admin/approve-bus',
+    admin_add_location:'admin/add-location',
+    admin_add_bus_type:'admin/add-bus-type',
+    admin_unapprove_bus_list:'admin/list-unapproved-buses',
+    user_list_bus_complaint:'user/list-bus-for-complaint'
+    
+
+})

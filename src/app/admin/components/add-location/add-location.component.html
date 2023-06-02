@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="admin-page-section">
+    <div class="login-container">
+        <div class="form-container">
+            <h4>Add location</h4>
+            <form class="form" [formGroup]="add_location">
+                <div class="input-box">
+                    <span class="label">
+                     Location
+                    </span>
+                    <input type="text" class="input-field" placeholder="Enter location" name="location"
+                        [ngClass]="{'form-input-field-error':form_control('location')}" formControlName="location">
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn-medium"
+                        (click)="add_location.valid?onSubmit(add_location.value):toaster.error('Enter required fields');">
+                        Add location
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

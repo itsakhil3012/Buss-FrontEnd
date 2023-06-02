@@ -1,0 +1,52 @@
+<div>
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="admin-page-section">
+        <div class="create-section">
+            <button [routerLink]="['../add-location']" mat-raised-button>Add location</button>
+            <button [routerLink]="['../add-bustype']" mat-raised-button>Add bus type</button>
+            <button [routerLink]="['../view-complaints']" mat-raised-button>View Complaints</button>
+        </div>
+        <div class="bus-approve">
+            <div class="bus-list" *ngFor="let item of bus_list">
+                <div class="list">
+                    <p>Bus Name:</p>
+                    <span>{{item?.name}}</span>
+                </div>
+                <div class="list">
+                    <p>Location:</p>
+                    <span>{{item?.location}}</span>
+                </div>
+                <div class="list">
+                    <p>Bus From:</p>
+                    <span>{{item?.route_from}}</span>
+                </div>
+                <div class="list">
+                    <p>Bus To:</p>
+                    <span>{{item?.route_to}}</span>
+                </div>
+                <div class="list">
+                    <p>Wifi:</p>
+                    <span *ngIf="item?.wifi==false">No</span>
+                    <span *ngIf="item?.wifi==true">No</span>
+                </div>
+                <div class="list">
+                    <p>Start time:</p>
+                    <span>{{item?.starting_time}}</span>
+                </div>
+                <div class="list">
+                    <p>Reaching time:</p>
+                    <span>{{item?.ending_time}}</span>
+                </div>
+                <div class="list">
+                    <form class="form-list">
+                        <p>Approve</p>
+                        <mat-checkbox class="example-margin" (click)="Submit(item)">
+                        </mat-checkbox>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

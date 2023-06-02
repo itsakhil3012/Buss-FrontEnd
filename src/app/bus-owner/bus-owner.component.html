@@ -1,0 +1,91 @@
+<div>
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="bus-owner">
+        <button [routerLink]="['bus-complaint']" mat-raised-button>View Complaints</button>
+        <div class="bus-details">
+            <h4>Create Bus </h4>
+        </div>
+        <div class="bus-form">
+            <form class="from-container" [formGroup]="bus_form">
+                <div class="form">
+                    <div class="input-box">
+                        <span class="label">
+                            Bus name
+                        </span>
+                        <input type="text" class="input-field" placeholder="Enter bus name" name="name"
+                            formControlName="name">
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus location
+                        </span>
+                        <div class="menu">
+                            <button mat-button [matMenuTriggerFor]="menucurrent">
+                                <div class="menu-btn-current">
+                                    <mat-label>{{this.location||"Current Location"}}</mat-label>
+                                </div>
+                            </button>
+                            <mat-menu #menucurrent="matMenu">
+                                <button mat-menu-item *ngFor="let item of current_location"
+                                    (click)="locationSubmit(item)">{{item?.location}}</button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus route from
+                        </span>
+                        <input type="text" class="input-field" placeholder="Enter bus name"
+                            formControlName="route_from">
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus type
+                        </span>
+                        <div class="menu">
+                            <button mat-button [matMenuTriggerFor]="menulist">
+                                <div class="menu-btn-current">
+                                    <mat-label>{{this.bus_type||"Bus type"}}</mat-label>
+                                </div>
+                            </button>
+                            <mat-menu #menulist="matMenu">
+                                <button mat-menu-item *ngFor="let item of bus_list"
+                                    (click)="dataTypeSubmit(item)">{{item?.bus_type}}</button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus route to
+                        </span>
+                        <input type="text" class="input-field" placeholder="Enter bus name" name="name"
+                            formControlName="route_to">
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus starting time
+                        </span>
+                        <input type="time" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"
+                            class="input-field" placeholder="Enter bus name" name="name"
+                            formControlName="starting_time">
+                    </div>
+                    <div class="input-box">
+                        <span class="label">
+                            Bus reaching time
+                        </span>
+                        <input type="time" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"
+                            class="input-field" placeholder="Enter bus name" name="name" formControlName="ending_time">
+                    </div>
+
+                </div>
+                <div>
+                    <button class="btn-signup" (click)="onSubmit(this.bus_form.value)">Create bus</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

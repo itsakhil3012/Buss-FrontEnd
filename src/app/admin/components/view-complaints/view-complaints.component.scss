@@ -1,0 +1,70 @@
+.login-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../../assets/Images/back.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.create-section {
+    padding: 1rem;
+}
+.admin-page-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../../assets/Images/back.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bus-approve{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.bus-list{
+    margin-top: 3rem;
+    border-radius: 0.625rem;
+    border-left: 16px solid var(--main);    
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    max-width: 30rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:white;
+    min-height: 10vh;
+    padding: 2rem;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+}
+.list p{
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.list span{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form-list{
+    display: flex;
+    flex-direction: row;
+}
+
+::ng-deep.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: #FCF55F !important;
+}

@@ -22,13 +22,12 @@
                     <div class="menu">
                         <button mat-button [matMenuTriggerFor]="menu">
                             <div class="menu-btn-from">
-                           
                                 <mat-label>{{this.destination_from||"From"}}</mat-label>
                             </div>
                         </button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item *ngFor="let frm of destination_location"
-                                (click)="destinationSubmitFrom(frm?.route_from)">{{frm?.route_from}}</button>
+                            <button mat-menu-item *ngFor="let frm of destination_location_from"
+                                (click)="destinationSubmitFrom(frm)">{{frm}}</button>
                         </mat-menu>
                     </div>
                     <div class="route">
@@ -41,8 +40,8 @@
                             </div>
                         </button>
                         <mat-menu #menufrom="matMenu">
-                            <button mat-menu-item *ngFor="let to of destination_location"
-                                (click)="destinationSubmitTo(to?.route_to)">{{to?.route_to}}</button>
+                            <button mat-menu-item *ngFor="let to of destination_location_to"
+                                (click)="destinationSubmitTo(to)">{{to}}</button>
                         </mat-menu>
                     </div>
                     <!-- <div class="menu">

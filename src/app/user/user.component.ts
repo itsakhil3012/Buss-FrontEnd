@@ -27,6 +27,8 @@ export class UserComponent implements OnInit {
   location: string = ''
   current_location: any;
   destination_location: any;
+  destination_location_from: any;
+  destination_location_to: any;
   destination_from: string = '';
   destination_to: string = ''
   bus_route: any;
@@ -84,7 +86,10 @@ export class UserComponent implements OnInit {
     this.api_service.ExecuteGet(this.api_service.baseUrl + ApiConstant.bus_destination, '', query)
       .subscribe({
         next(value: any) {
-          $this.destination_location = value?.destination;
+          console.log("data",value?.RouteFrom)
+          $this.destination_location = value;
+          $this.destination_location_from=value?.RouteFrom;
+          $this.destination_location_to=value?.RouteTo
         },
         error(err) {
           console.log("Api calling error")

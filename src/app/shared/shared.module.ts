@@ -16,11 +16,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { RejectPopupComponent } from './components/reject-popup/reject-popup.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    RejectPopupComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     NgxMaterialTimepickerModule,
     MatButtonModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,
@@ -42,7 +46,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     NgxMaterialTimepickerModule,
     MatButtonModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

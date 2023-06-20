@@ -24,7 +24,9 @@ export const ApiConstant = Object.freeze({
     admin_add_location:'admin/add-location',
     admin_add_bus_type:'admin/add-bus-type',
     admin_unapprove_bus_list:'admin/list-unapproved-buses',
-    user_list_bus_complaint:'user/list-bus-for-complaint'
+    user_list_bus_complaint:'user/list-bus-for-complaint',
+    reject_bus:'admin/reject-bus',
+    reject_list:'bus-owner/list-rejected-buses'
     
 
 })

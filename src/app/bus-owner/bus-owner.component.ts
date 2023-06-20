@@ -35,7 +35,8 @@ export class BusOwnerComponent implements OnInit {
   bus_complaint_name: string = '';
   selectedTime: string = '';
   bus_list: any;
-  bus_type: string = ''
+  bus_type: string = '';
+
   private unsubscribe = new Subject<void>();
 
 
@@ -62,6 +63,7 @@ export class BusOwnerComponent implements OnInit {
   ngOnInit(): void {
     this.getCurentLocation();
     this.getBusList();
+  
   }
   form_control(property: string) {
     let controls = this.bus_form.controls;
@@ -100,7 +102,7 @@ export class BusOwnerComponent implements OnInit {
   }
 
   locationSubmit(data: any) {
-    console.log("data",data)
+    console.log("data", data)
     this.location = data?.location;
     this.bus_form?.patchValue({
       location: data?.location
@@ -122,7 +124,7 @@ export class BusOwnerComponent implements OnInit {
     }
     let $this = this
     let form_data = this.bus_form?.value;
-    this.api_service.ExecutePost(this.api_service.baseUrl + ApiConstant.bus_registration,form_data)
+    this.api_service.ExecutePost(this.api_service.baseUrl + ApiConstant.bus_registration, form_data)
       .pipe(takeUntil(this.unsubscribe)).subscribe({
         next(value: any) {
           $this.toaster.success("New Bus added");
@@ -134,6 +136,7 @@ export class BusOwnerComponent implements OnInit {
       })
 
   }
+
 
 
 }

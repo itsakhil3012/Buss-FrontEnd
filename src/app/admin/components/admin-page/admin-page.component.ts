@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, takeUntil } from 'rxjs';
+import { RejectPopupComponent } from 'src/app/shared/components/reject-popup/reject-popup.component';
 import { ApiConstant } from 'src/app/shared/constants/api_constants';
 import { ApiService } from 'src/app/shared/service/api.service';
 import { GeneralService } from 'src/app/shared/service/general.service';
@@ -16,7 +18,7 @@ import { ProfileService } from 'src/app/shared/service/profile.service';
 export class AdminPageComponent implements OnInit {
 
   bus_list: any;
-  bus_id:string='';
+  bus_id: string = '';
   private unsubscribe = new Subject<void>();
   constructor(
     private formBuilder: FormBuilder,
@@ -25,6 +27,7 @@ export class AdminPageComponent implements OnInit {
     private router: Router,
     private general: GeneralService,
     private profile: ProfileService,
+    public dialog: MatDialog,
   ) {
 
   }
@@ -45,9 +48,9 @@ export class AdminPageComponent implements OnInit {
 
   }
   Submit(data: any) {
-    this.bus_id=data?._id
+    this.bus_id = data?._id
     let $this = this
-    this.api_service.ExecutePut(this.api_service.baseUrl + ApiConstant.admin_approve_bus,'',this.bus_id)
+    this.api_service.ExecutePut(this.api_service.baseUrl + ApiConstant.admin_approve_bus, '', this.bus_id)
       .pipe(takeUntil(this.unsubscribe)).subscribe({
         next(value) {
           if (value) {
@@ -58,6 +61,17 @@ export class AdminPageComponent implements OnInit {
           $this.toaster.error(err.error.msg)
         },
       })
+  }
+  getPopup(data: any) {
+    console.log("data",data?._id)
+  
+    let dialogRef = this.dialog.open(RejectPopupComponent, {
+      width: '580px',
+      height: '30vh',
+      data: {
+        id:data?._id
+        }
+    })
 
 
   }

@@ -1,0 +1,13 @@
+<div class="reject">
+    <form class="form" [formGroup]="bus_reject">
+    <div class="input-box">
+        <span class="label">
+           Reason for rejection
+        </span>
+        <input type="text" class="input-field" placeholder="Enter reason" name="bus_type" formControlName="reason" >
+        <button type="button" class="btn-medium" (click)="bus_reject.valid?rejectApi(bus_reject.value):toaster.error('Enter required fields');">
+            Submit
+    </button>
+    </div>
+    </form>
+</div>

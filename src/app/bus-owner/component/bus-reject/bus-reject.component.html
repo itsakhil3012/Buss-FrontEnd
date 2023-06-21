@@ -1,0 +1,9 @@
+<div class="reject-div">
+    <h4>Reject List</h4>
+    <div class="reject-list" *ngFor="let item of reject_list">
+        <p><span>Bus id:</span>{{item?.bus_code
+        }}</p>
+        <p><span>Bus Name:</span>{{item?.name}}</p>
+        <p class="reason"><span>Reason:</span >{{item?.rejected_reason}}</p>
+    </div>
+</div>

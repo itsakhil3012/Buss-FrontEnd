@@ -1,0 +1,39 @@
+.reject-div {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../../assets/Images/back.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+
+}
+.reject-div h4{
+    margin: 3rem 0;
+    font-size: 3rem;
+    font-weight: 500;
+    
+}
+.reject-list{
+    width: 50rem;
+    height: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    gap: 12px;
+}
+.reject-list p {
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reject-list span {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.reason{
+    color: red;
+}
